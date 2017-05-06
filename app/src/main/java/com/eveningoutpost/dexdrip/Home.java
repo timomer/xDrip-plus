@@ -1554,12 +1554,6 @@ public class Home extends ActivityWithMenu {
 
     private boolean checkEula() {
 
-        final boolean warning_agreed_to = prefs.getBoolean("warning_agreed_to", false);
-        if (!warning_agreed_to) {
-            startActivity(new Intent(getApplicationContext(), Agreement.class));
-            finish();
-            return false;
-        } else {
             final boolean IUnderstand = prefs.getBoolean("I_understand", false);
             if (!IUnderstand) {
                 Intent intent = new Intent(getApplicationContext(), LicenseAgreementActivity.class);
@@ -1569,7 +1563,6 @@ public class Home extends ActivityWithMenu {
             } else {
                 return true;
             }
-        }
     }
 
     public static void staticRefreshBGCharts() {
@@ -1915,7 +1908,7 @@ public class Home extends ActivityWithMenu {
         final boolean use_pebble_health = prefs.getBoolean("use_pebble_health", true);
         if ((use_pebble_health) && (pm != null)) {
             stepsButton.setText(Integer.toString(pm.metric));
-            stepsButton.setVisibility(View.VISIBLE);
+            //stepsButton.setVisibility(View.VISIBLE);
             stepsButton.setAlpha(getPreferencesBoolean("show_pebble_movement_line", true) ? 1.0f : 0.3f);
         } else {
             stepsButton.setVisibility(View.INVISIBLE);
@@ -2049,7 +2042,7 @@ public class Home extends ActivityWithMenu {
                         lowPredictText.setTextColor(Color.YELLOW); // low front is getting nearer!
                     }
                 }
-                lowPredictText.setVisibility(View.VISIBLE);
+                //lowPredictText.setVisibility(View.VISIBLE);
             }
             BgGraphBuilder.previous_low_occurs_at = BgGraphBuilder.low_occurs_at;
         }
@@ -2636,7 +2629,7 @@ public class Home extends ActivityWithMenu {
         boolean got_data = Experience.gotData();
         menu.findItem(R.id.crowdtranslate).setVisible(got_data);
 
-        menu.findItem(R.id.showreminders).setVisible(prefs.getBoolean("plus_show_reminders", true));
+        //menu.findItem(R.id.showreminders).setVisible(prefs.getBoolean("plus_show_reminders", true));
 
         return super.onCreateOptionsMenu(menu);
     }

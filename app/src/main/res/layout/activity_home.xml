@@ -123,7 +123,8 @@
                 android:shadowRadius="14"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textStyle="bold"
-                android:textColor="#C30909" />
+                android:textColor="#C30909"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/btnTreatment"
@@ -142,7 +143,8 @@
                 android:paddingBottom="1dp"
                 android:layout_marginBottom="1dp"
                 android:layout_marginTop="1dp"
-                android:paddingLeft="2dp" />
+                android:paddingLeft="2dp"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/btnNote"
@@ -160,7 +162,8 @@
                 android:layout_alignEnd="@+id/lowpredict"
                 android:layout_marginTop="4dp"
                 android:paddingTop="2dp"
-                android:paddingBottom="2dp" />
+                android:paddingBottom="2dp"
+                android:visibility="gone"/>
 
 
             <ImageButton
@@ -178,7 +181,8 @@
                 android:paddingBottom="3dp"
                 android:layout_below="@+id/btnNote"
                 android:layout_alignStart="@+id/btnNote"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:visibility="gone"/>
 
 
             <ImageButton
@@ -195,7 +199,8 @@
                 android:paddingBottom="1dp"
                 android:layout_below="@+id/btnUndo"
                 android:layout_alignStart="@+id/btnUndo"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:visibility="gone"/>
 
 
             <TextView
@@ -215,7 +220,8 @@
                 android:text="Treatment voice data appears here"
                 android:textAlignment="gravity"
                 android:textColor="@android:color/holo_green_light"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/approveTreatment"
@@ -225,7 +231,8 @@
                 android:layout_below="@+id/btnTreatment"
                 android:layout_marginStart="29dp"
                 android:contentDescription="Confirm Treatment"
-                android:src="@android:drawable/ic_input_add" />
+                android:src="@android:drawable/ic_input_add"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/cancelTreatment"
@@ -233,7 +240,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/approveTreatment"
                 android:layout_toEndOf="@+id/approveTreatment"
-                android:src="@android:drawable/ic_delete" />
+                android:src="@android:drawable/ic_delete"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/bloodTestButton"
@@ -243,7 +251,8 @@
                 android:layout_alignBottom="@+id/cancelTreatment"
                 android:layout_marginStart="29dp"
                 android:layout_toEndOf="@+id/cancelTreatment"
-                android:src="@drawable/ic_touch_app_white_48dp" />
+                android:src="@drawable/ic_touch_app_white_48dp"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/textBloodGlucose"
@@ -264,7 +273,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/bloodTestButton"
                 android:layout_below="@+id/bloodTestButton"
-                android:src="@drawable/ic_local_dining_white_48dp" />
+                android:src="@drawable/ic_local_dining_white_48dp"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/textCarbohydrate"
@@ -277,7 +287,8 @@
                 android:text="65 grams"
                 android:textColor="@android:color/holo_green_light"
                 android:textSize="22dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/buttonInsulin"
@@ -285,7 +296,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/buttonCarbs"
                 android:layout_below="@+id/buttonCarbs"
-                android:src="@drawable/ic_colorize_white_48dp" />
+                android:src="@drawable/ic_colorize_white_48dp"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/textInsulinUnits"
@@ -298,7 +310,8 @@
                 android:text="14 units"
                 android:textColor="@android:color/holo_green_light"
                 android:textSize="22dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/timeButton"
@@ -306,7 +319,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/approveTreatment"
                 android:layout_below="@+id/bloodTestButton"
-                android:src="@drawable/ic_av_timer_white_36dp" />
+                android:src="@drawable/ic_av_timer_white_36dp"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/textTimeButton"
@@ -319,7 +333,8 @@
                 android:text="00:00"
                 android:textColor="@android:color/holo_green_light"
                 android:textSize="22dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/parakeetbattery"
@@ -333,7 +348,8 @@
                 android:textStyle="normal"
                 android:layout_marginLeft="10dp"
                 android:layout_below="@+id/extraStatusLine"
-                android:layout_toEndOf="@+id/textBridgeBattery" />
+                android:layout_toEndOf="@+id/textBridgeBattery"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/libstatus"
@@ -360,7 +376,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="8dp"
                 android:paddingRight="4dp"
-                android:paddingBottom="2dp" />
+                android:paddingBottom="2dp"
+                android:visibility="gone"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -377,7 +394,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_below="@+id/vehicleModeButton"
-                android:layout_alignStart="@+id/vehicleModeButton" />
+                android:layout_alignStart="@+id/vehicleModeButton"
+                android:visibility="gone"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -397,7 +415,8 @@
                 android:textSize="10sp"
                 android:gravity="center_horizontal|center_vertical"
                 android:layout_below="@+id/bpmButton"
-                android:layout_alignStart="@+id/vehicleModeButton" />
+                android:layout_alignStart="@+id/vehicleModeButton"
+                android:visibility="gone"/>
 
 
 

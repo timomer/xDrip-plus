@@ -69,7 +69,8 @@
                 android:text="@string/upload_logs"
                 android:id="@+id/send_logs_button"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"/>
 
             <Switch
                 android:layout_width="wrap_content"

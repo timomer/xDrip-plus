@@ -4,21 +4,22 @@
         android:title="Show Help"
         android:checkable="false"
         android:orderInCategory="1"
-        android:visible="false"
         android:onClick="showHelpFromMenu"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/showreminders"
         android:title="Reminders"
         android:checkable="false"
         android:orderInCategory="1"
-        android:visible="false"
         android:onClick="showRemindersFromMenu"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/export_submenu"
         android:title="@string/export_submenu"
-        android:orderInCategory="1">
+        android:orderInCategory="1"
+        android:visible="false">
 
         <menu>
     <item android:id="@+id/action_export_database"
@@ -43,7 +44,7 @@
         android:title="Load / Save Settings on sdcard"
         android:checkable="false"
         android:onClick="settingsSDcardExport"
-        android:visible="true"
+         
         android:orderInCategory="1"
         android:showAsAction="never"/>
 </menu>
@@ -52,17 +53,19 @@
         android:title="@string/show_parakeet_map"
         android:checkable="false"
         android:onClick="showMapFromMenu"
-        android:visible="true"
+         
         android:orderInCategory="1"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/parakeetsetup"
         android:title="@string/switch_parakeet_to_setup_mode"
         android:checkable="false"
         android:onClick="parakeetSetupMode"
-        android:visible="true"
+         
         android:orderInCategory="1"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item
         android:id="@+id/action_resend_last_bg"
@@ -86,31 +89,32 @@
         android:checkable="false"
         android:orderInCategory="1"
         android:onClick="deleteAllBG"
-        android:visible="false"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/testFeature"
         android:title="Debugging test feature"
         android:checkable="false"
         android:orderInCategory="1"
         android:onClick="testFeature"
-        android:visible="false"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/crowdtranslate"
         android:title="@string/crowd_sourced_translation"
         android:checkable="false"
         android:orderInCategory="1"
         android:onClick="crowdTranslate"
-        android:visible="true"
-        android:showAsAction="never"/>
+         
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/userEvents"
         android:title="@string/view_events_log"
         android:checkable="false"
         android:orderInCategory="1"
         android:onClick="viewEventLog"
-        android:visible="true"
+         
         android:showAsAction="never"/>
 
 
@@ -118,8 +122,8 @@
         android:title="Sync Treatments"
         android:checkable="false"
         android:orderInCategory="1"
-        android:visible="false"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/sharemyconfig"
         android:title="@string/share_config_via_qr_code"
@@ -127,7 +131,8 @@
         android:checkable="false"
         android:orderInCategory="1"
         android:onClick="shareMyConfig"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/sendbackfill"
         android:title="Send BG readings to backfill"
@@ -142,19 +147,21 @@
         android:checkable="false"
         android:orderInCategory="1"
         android:onClick="checkForUpdate"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/sendfeedback"
         android:title="@string/send_feedback_to_developer"
         android:checkable="false"
         android:orderInCategory="1"
         android:onClick="sendFeedback"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 
     <item android:id="@+id/action_toggle_speakreadings"
         android:title="@string/speak_readings"
         android:checkable="true"
         android:orderInCategory="2"
-        android:visible="false"
-        android:showAsAction="never"/>
+        android:showAsAction="never"
+        android:visible="false"/>
 </menu>

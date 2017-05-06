@@ -2,7 +2,10 @@
 <resources>
 
     <string name="pref_I_understand_title"> I UNDERSTAND AND AGREE</string>
-    <string name="pref_I_understand_summery" translatable="false">xDrip+ MUST NOT BE USED TO MAKE MEDICAL DECISIONS. IT IS A RESEARCH TOOL ONLY AND IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.</string>
+    <string name="pref_I_understand_summery" translatable="false">
+        xDrip-light MUST NOT BE USED TO MAKE MEDICAL DECISIONS. IT IS A RESEARCH TOOL ONLY AND IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+        Code is based on the xDrip+ project.
+    </string>
     <string name="import_db_warning">
         WARNING: Importing a database might cause SEVERE DATA LOSS. If you don\'t know why you want to use the import, don\'t use it.
         In regular operation of xDrip it is not needed. Just use it in case of previous data loss.
@@ -24,8 +27,8 @@
 
 
     <string name="local_target_package" translatable="false">com.eveningoutpost.dexdrip</string>
-    <string name="app_name" translatable="false">xDrip+</string>
-    <string name="app_name_launcher" translatable="false">xDrip+</string>
+    <string name="app_name" translatable="false">xDrip-light</string>
+    <string name="app_name_launcher" translatable="false">xDrip-light</string>
     <string name="wserviceurl" translatable="false">https://xdrip-plus-updates.appspot.com</string>
     <string name="all_settings_wizard">all_settings_wizard</string>
     <string name="wizard_uuid" translatable="false">wizard_uuid</string>

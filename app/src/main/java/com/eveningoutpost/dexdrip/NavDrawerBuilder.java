@@ -17,6 +17,7 @@ import com.eveningoutpost.dexdrip.UtilityModels.Experience;
 import com.eveningoutpost.dexdrip.stats.StatsActivity;
 import com.eveningoutpost.dexdrip.utils.DexCollectionType;
 import com.eveningoutpost.dexdrip.utils.Preferences;
+import com.eveningoutpost.dexdrip.utils.Preferences_Light;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,7 +43,8 @@ public class NavDrawerBuilder {
         boolean IUnderstand = prefs.getBoolean("I_understand", false);
         if (!IUnderstand) {
             this.nav_drawer_options.add(context.getString(R.string.settings));
-            this.nav_drawer_intents.add(new Intent(context, Preferences.class));
+            //this.nav_drawer_intents.add(new Intent(context, Preferences.class));
+            this.nav_drawer_intents.add(new Intent(context, Preferences_Light.class));
             return;
         }
 
@@ -123,21 +125,23 @@ public class NavDrawerBuilder {
             this.nav_drawer_intents.add(new Intent(context, SnoozeActivity.class));
         }
 
-        if (use_note_search || (Treatments.last() != null)) {
-            this.nav_drawer_options.add(NoteSearch.menu_name);
-            this.nav_drawer_intents.add(new Intent(context, NoteSearch.class));
-            use_note_search = true; // cache
-        }
+        //if (use_note_search || (Treatments.last() != null)) {
+        //    this.nav_drawer_options.add(NoteSearch.menu_name);
+        //    this.nav_drawer_intents.add(new Intent(context, NoteSearch.class));
+        //    use_note_search = true; // cache
+        //}
 
         if (Experience.gotData()) {
             this.nav_drawer_options.add(context.getString(R.string.statistics));
             this.nav_drawer_intents.add(new Intent(context, StatsActivity.class));
 
-            this.nav_drawer_options.add(context.getString(R.string.history));
-            this.nav_drawer_intents.add(new Intent(context, BGHistory.class));
+            //this.nav_drawer_options.add(context.getString(R.string.history));
+            //this.nav_drawer_intents.add(new Intent(context, BGHistory.class));
         }
 
         this.nav_drawer_options.add(context.getString(R.string.settings));
-        this.nav_drawer_intents.add(new Intent(context, Preferences.class));
+        //this.nav_drawer_intents.add(new Intent(context, Preferences.class));
+        this.nav_drawer_intents.add(new Intent(context, Preferences_Light.class));
+
     }
 }

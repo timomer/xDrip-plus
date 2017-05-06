@@ -52,50 +52,7 @@
                     android:text="@string/save"
                     android:id="@+id/saveButton"
                     android:layout_marginTop="20dp" />
-
-                <Button
-                    android:layout_marginTop="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/view_important_warning"
-                    android:id="@+id/warningButton4"
-                    android:onClick="viewWarning"
-                    android:layout_gravity="right"
-                    android:backgroundTint="#2c2c2c" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/translation_credits"
-                    android:id="@+id/translator_credits"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true"
-                    android:paddingStart="10dp"
-                    android:gravity="right"
-                    android:textColor="#ffe57f"
-                    android:paddingTop="7dp" />
-
-                <Button style="?android:attr/buttonStyleSmall"
-                    android:background="@android:color/transparent"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/view_google_licenses"
-                    android:id="@+id/googlelicenses"
-                    android:onClick="viewGoogleLicenses"
-                    android:layout_gravity="right" />
-
             </LinearLayout>
-
-            <WebView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/webView"
-                android:visibility="invisible"
-                android:background="@android:color/transparent"
-                android:layout_alignParentBottom="true"
-                android:layout_alignEnd="@+id/scrollView2"
-                android:layout_alignParentStart="true" />
 
         </LinearLayout>
     </ScrollView>

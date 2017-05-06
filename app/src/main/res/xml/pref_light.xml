@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="xdrip_units_settings"
+        android:summary="@string/mmol_or_mgdl_high_and_low"
+        android:title="@string/glucose_units">
+        <PreferenceCategory
+            android:title="@string/general_settings"
+            android:key="bgRange">
+            <ListPreference
+                android:key="units"
+                android:title="@string/glucose_units"
+                android:entries="@array/bgUnitEntries"
+                android:entryValues="@array/bgUnitValues"
+                android:defaultValue="mgdl"/>
+            <EditTextPreference
+                android:key="highValue"
+                android:title="@string/high_value"
+                android:numeric="decimal"
+                android:inputType="numberDecimal"
+                android:summary="@string/maximum_value"
+                android:defaultValue="170" />
+            <EditTextPreference
+                android:key="lowValue"
+                android:title="@string/low_value"
+                android:numeric="decimal"
+                android:inputType="numberDecimal"
+                android:summary="@string/minimum_value"
+                android:defaultValue="70" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <EditTextPreference
+        android:defaultValue="ABCDEF"
+        android:inputType="textNoSuggestions|textVisiblePassword|textCapCharacters"
+        android:key="dex_txid"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:summary="@string/transmitter_id"
+        android:title="@string/dexcom_transmitter_id" />
+
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:key="whole_alerts_screen"
+        android:summary="@string/glucose_calibration_and_other_alerts"
+        android:title="@string/alarms_and_alerts">
+        <PreferenceCategory
+            android:key="alerts_category"
+            android:title="@string/alerts_and_notifications">
+            <Preference
+                android:key="bg_level_alerts"
+                android:title="@string/glucose_level_alerts_list">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetClass="com.eveningoutpost.dexdrip.AlertList"
+                    android:targetPackage="@string/local_target_package" />
+            </Preference>
+
+            <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                android:key="bg_alerts_screen"
+                android:title="@string/glucose_alerts_settings">
+                <ListPreference
+                    android:defaultValue="High"
+                    android:entries="@array/BgAlertProfileEntries"
+                    android:entryValues="@array/BgAlertProfileValues"
+                    android:key="bg_alert_profile"
+                    android:title="@string/alert_volume_profile" />
+
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="smart_snoozing"
+                    android:summary="@string/keep_snoozing_if_glucose_is_heading_in_right_direction"
+                    android:title="@string/smart_snoozing" />
+
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="smart_alerting"
+                    android:summary="@string/dont_alert_if_glucose_in_right_direction"
+                    android:title="@string/smart_alerting" />
+
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="no_alarms_during_calls"
+                    android:summary="@string/alarms_silenced_during_telephone_calls"
+                    android:title="@string/dont_alarm_during_phone_calls" />
+
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="buttons_silence_alert"
+                    android:summary="@string/volume_buttons_snooze"
+                    android:title="@string/buttons_silence_alarms" />
+
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="start_snoozed"
+                    android:summary="@string/alerts_start_out_snoozed_and_must_persist_for_a_while"
+                    android:title="@string/start_snoozed" />
+
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="bg_alerts_from_main_menu"
+                    android:summary="@string/create_shortcut"
+                    android:title="@string/shortcut_to_bg_alerts" />
+
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="disable_alerts_stale_data"
+                    android:summary="@string/suppress_alerts_missed_readings"
+                    android:title="@string/suppress_alerts_if_missed_readings" />
+                <EditTextPreference
+                    android:defaultValue="15"
+                    android:dependency="disable_alerts_stale_data"
+                    android:inputType="number"
+                    android:key="disable_alerts_stale_data_minutes"
+                    android:summary="@string/suppress_alerts_after"
+                    android:title="@string/suppress_alerts_after" />
+
+            </PreferenceScreen>
+
+
+            <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                android:key="calibration_alerts_screen"
+                android:title="@string/calibration_alerts">
+                <SwitchPreference
+                    android:defaultValue="false"
+                    android:key="calibration_notifications"
+                    android:summary="@string/alert_calibration_request"
+                    android:title="@string/calibration_alerts" />
+                <EditTextPreference
+                    android:defaultValue="24"
+                    android:dependency="calibration_notifications"
+                    android:key="calibration_reminder_hours"
+                    android:numeric="integer"
+                    android:summary="@string/calibrations_request_time_time_difference"
+                    android:title="@string/hours_between_calibrations" />
+                <RingtonePreference
+                    android:defaultValue="content://settings/system/notification_sound"
+                    android:key="calibration_notification_sound"
+                    android:ringtoneType="all"
+                    android:showSilent="true"
+                    android:summary="@string/calibrations_sound"
+                    android:dependency="calibration_notifications"
+                    android:title="@string/calibration_request_sound" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:dependency="calibration_notifications"
+                    android:key="calibration_alerts_override_silent"
+                    android:title="@string/override_silent_mode" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:dependency="calibration_notifications"
+                    android:key="calibration_alerts_while_charging"
+                    android:summary="@string/no_calibration_requests_charging"
+                    android:title="@string/even_when_charging" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:dependency="calibration_notifications"
+                    android:key="calibration_alerts_repeat"
+                    android:summary="@string/keep_alert_no_calibration"
+                    android:title="@string/repeat_alerts" />
+                <EditTextPreference
+                    android:defaultValue="20"
+                    android:dependency="calibration_alerts_repeat"
+                    android:key="calibration_snooze"
+                    android:numeric="integer"
+                    android:summary="@string/calibration_minutes_reraise"
+                    android:title="@string/alert_repeat_minutes" />
+            </PreferenceScreen>
+
+            <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                android:key="missed_readings_screen"
+                android:title="@string/missed_reading_alert">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetClass="com.eveningoutpost.dexdrip.MissedReadingActivity"
+                    android:targetPackage="@string/local_target_package" />
+            </PreferenceScreen>
+
+            <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                android:key="other_alerts_screen"
+                android:title="@string/other_alerts">
+
+                <PreferenceCategory android:title="Noisy Readings">
+                    <CheckBoxPreference
+                        android:defaultValue="false"
+                        android:key="bg_unclear_readings_alerts"
+                        android:title="@string/bad_noisy_value_alerts" />
+                    <EditTextPreference
+                        android:defaultValue="90"
+                        android:dependency="bg_unclear_readings_alerts"
+                        android:inputType="number"
+                        android:key="bg_unclear_readings_minutes"
+                        android:summary=""
+                        android:title="@string/alert_noisy_values" />
+                    <EditTextPreference
+                        android:defaultValue="20"
+                        android:dependency="bg_unclear_readings_alerts"
+                        android:key="bg_unclear_readings_alert_snooze"
+                        android:numeric="integer"
+                        android:summary="@string/alert_minutes_reraise"
+                        android:title="@string/alert_snooze" />
+                    <CheckBoxPreference
+                        android:dependency="bg_unclear_readings_alerts"
+                        android:key="bg_unclear_readings_alert_enable_alerts_reraise"
+                        android:title="@string/reraise_before_snooze"
+                        android:summary="@string/reraise_not_snoozed_sooner"
+                        android:defaultValue="false" />
+                    <EditTextPreference
+                        android:dependency="bg_unclear_readings_alert_enable_alerts_reraise"
+                        android:key="bg_unclear_readings_alert_reraise_sec"
+                        android:title="@string/alert_reraise_time"
+                        android:numeric="integer"
+                        android:summary="@string/alert_seconds_reraise"
+                        android:defaultValue="60" />
+                </PreferenceCategory>
+
+                <PreferenceCategory android:title="Falling/Rising BG">
+                    <CheckBoxPreference
+                        android:defaultValue="false"
+                        android:key="falling_alert"
+                        android:title="@string/bg_falling_fast" />
+                    <ListPreference
+                        android:defaultValue="3"
+                        android:dependency="falling_alert"
+                        android:entries="@array/risingEntries"
+                        android:entryValues="@array/risingValues"
+                        android:key="falling_bg_val"
+                        android:title="@string/falling_threshold" />
+                    <CheckBoxPreference
+                        android:defaultValue="false"
+                        android:key="rising_alert"
+                        android:title="@string/bg_rising_fast" />
+                    <ListPreference
+                        android:defaultValue="3"
+                        android:dependency="rising_alert"
+                        android:entries="@array/risingEntries"
+                        android:entryValues="@array/risingValues"
+                        android:key="rising_bg_val"
+                        android:title="@string/rising_threshold" />
+                </PreferenceCategory>
+
+
+                <PreferenceCategory android:title="Alert Preferences (for these alerts)">
+                    <RingtonePreference
+                        android:defaultValue="content://settings/system/alarm_alert"
+                        android:key="other_alerts_sound"
+                        android:ringtoneType="all"
+                        android:showSilent="true"
+                        android:summary="@string/set_sound_for_bg_alerts"
+                        android:title="@string/alert_sound" />
+                    <CheckBoxPreference
+                        android:defaultValue="false"
+                        android:key="other_alerts_override_silent"
+                        android:title="@string/override_silent_mode_these" />
+                </PreferenceCategory>
+            </PreferenceScreen>
+            <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                android:key="smart_alerts_screen"
+                android:title="@string/extra_alerts_xdrip_plus">
+                <PreferenceCategory
+                    android:summary="When above High level for too long and not heading downwards"
+                    android:title="@string/persistent_high_alert">
+                    <SwitchPreference
+                        android:defaultValue="false"
+                        android:key="persistent_high_alert_enabled"
+                        android:summary="@string/alarm_if_above_high_value"
+                        android:title="@string/persistent_high_alert" />
+                    <EditTextPreference
+                        android:defaultValue="60"
+                        android:dependency="persistent_high_alert_enabled"
+                        android:inputType="number"
+                        android:key="persistent_high_threshold_mins"
+                        android:numeric="integer"
+                        android:title="@string/for_longer_than_minutes" />
+                    <EditTextPreference
+                        android:defaultValue="20"
+                        android:dependency="persistent_high_alert_enabled"
+                        android:inputType="number"
+                        android:key="persistent_high_repeat_mins"
+                        android:numeric="integer"
+                        android:title="@string/persistent_repeat_max" />
+                    <RingtonePreference
+                        android:defaultValue="content://settings/system/notification_sound"
+                        android:dependency="persistent_high_alert_enabled"
+                        android:key="persistent_high_alert_sound"
+                        android:ringtoneType="all"
+                        android:showSilent="true"
+                        android:summary="@string/choose_sound_used_for_persistent_high_alarm"
+                        android:title="@string/persistent_high_sound" />
+                </PreferenceCategory>
+            </PreferenceScreen>
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <PreferenceCategory
+        android:key="other_category"
+        android:title="Advance Settings">
+
+        <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+            android:key="xdrip_plus_g5_extra_settings"
+            android:summary="@string/advanced_g5_settings"
+            android:title="@string/g5_debug_settings">
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="run_ble_scan_constantly"
+                android:summary="@string/g5_scan_constantly"
+                android:title="@string/scan_for_g5_constantly" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="run_G5_ble_tasks_on_uithread"
+                android:summary="@string/g5_force_ui_thread"
+                android:title="@string/force_g5_ui_thread" />
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="always_get_new_keys"
+                android:summary="@string/g5_full_authentification"
+                android:title="@string/authentificate_before_reading" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="always_unbond_G5"
+                android:summary="@string/g5_remove_before_read"
+                android:title="@string/unbond_g5_before_read" />
+        </PreferenceScreen>
+
+        <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+            android:key="smart_watch_options"
+            android:summary="@string/pebble_and_android_wear_options"
+            android:title="@string/smart_watch_features">
+            <PreferenceCategory
+                android:key="watch_integration"
+                android:title="@string/wear_integration">
+                <SwitchPreference
+                    android:defaultValue="true"
+                    android:key="wear_sync"
+                    android:summary="@string/send_data_to_android_wear_watch"
+                    android:switchTextOff="@string/short_off_text_for_switches"
+                    android:switchTextOn="@string/short_on_text_for_switches"
+                    android:title="@string/android_wear_integration" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:dependency="wear_sync"
+                    android:key="enable_wearG5"
+                    android:summary="@string/pref_summary_enable_wearG5"
+                    android:title="@string/pref_enable_wearG5" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:dependency="enable_wearG5"
+                    android:key="force_wearG5"
+                    android:summary="@string/pref_summary_force_wearG5"
+                    android:title="@string/pref_force_wearG5" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:dependency="force_wearG5"
+                    android:key="disable_wearG5_on_lowbattery"
+                    android:summary="@string/pref_summary_disable_wearG5_on_lowbattery"
+                    android:title="@string/pref_disable_wearG5_on_lowbattery" />
+                <SwitchPreference
+                    android:defaultValue="false"
+                    android:dependency="force_wearG5"
+                    android:key="disable_wearG5_on_missedreadings"
+                    android:summary="@string/pref_summary_disable_wearG5_on_missedreadings"
+                    android:title="@string/pref_disable_wearG5_on_missedreadings" />
+                <EditTextPreference
+                    android:defaultValue="30"
+                    android:dependency="disable_wearG5_on_missedreadings"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:key="disable_wearG5_on_missedreadings_level"
+                    android:summary=""
+                    android:title="@string/pref_disable_wearG5_on_missedreadings_level" />
+                <EditTextPreference
+                    android:defaultValue=""
+                    android:dependency="force_wearG5"
+                    android:editable="false"
+                    android:inputType="none"
+                    android:key="node_wearG5"
+                    android:summary="@string/pref_summary_node_wearG5"
+                    android:textIsSelectable="true"
+                    android:title="@string/pref_node_wearG5" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:dependency="enable_wearG5"
+                    android:key="sync_wear_logs"
+                    android:summary="@string/pref_summary_sync_wear_logs"
+                    android:title="@string/pref_sync_wear_logs" />
+                <EditTextPreference
+                    android:defaultValue="wear"
+                    android:dependency="sync_wear_logs"
+                    android:editable="true"
+                    android:key="wear_logs_prefix"
+                    android:summary="@string/pref_summary_wear_logs_prefix"
+                    android:textIsSelectable="true"
+                    android:title="@string/pref_wear_logs_prefix" />
+            </PreferenceCategory>
+
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>

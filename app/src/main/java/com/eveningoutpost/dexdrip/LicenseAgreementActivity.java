@@ -32,7 +32,7 @@ public class LicenseAgreementActivity extends AppCompatActivity {
         IUnderstand = prefs.getBoolean("I_understand", false);
         setContentView(R.layout.activity_license_agreement);
         JoH.fixActionBar(this);
-        findViewById(R.id.googlelicenses).setAlpha(0.5f);
+        //findViewById(R.id.googlelicenses).setAlpha(0.5f);
         agreeCheckBox = (CheckBox) findViewById(R.id.agreeCheckBox);
         agreeCheckBox.setChecked(IUnderstand);
         saveButton = (Button) findViewById(R.id.saveButton);
@@ -54,17 +54,17 @@ public class LicenseAgreementActivity extends AppCompatActivity {
                 if (googleLicense != null) {
                     String whiteheader = "<font size=-2 color=white><pre>";
                     String whitefooter = "</font></pre>";
-                    WebView textview = (WebView) findViewById(R.id.webView);
-                    textview.setBackgroundColor(Color.TRANSPARENT);
-                    textview.getSettings().setJavaScriptEnabled(false);
-                    textview.loadDataWithBaseURL("", whiteheader + googleLicense + whitefooter, "text/html", "UTF-8", "");
+                    //WebView textview = (WebView) findViewById(R.id.webView);
+                    //textview.setBackgroundColor(Color.TRANSPARENT);
+                    //textview.getSettings().setJavaScriptEnabled(false);
+                    //textview.loadDataWithBaseURL("", whiteheader + googleLicense + whitefooter, "text/html", "UTF-8", "");
                     appended = true;
-                    findViewById(R.id.googlelicenses).setVisibility(View.INVISIBLE);
-                    findViewById(R.id.webView).setVisibility(View.VISIBLE);
+                    //findViewById(R.id.googlelicenses).setVisibility(View.INVISIBLE);
+                    //findViewById(R.id.webView).setVisibility(View.VISIBLE);
 
                 } else {
                     UserError.Log.d(TAG, "Nullpointer getting Google License: errorcode:" + GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(getApplicationContext()));
-                    findViewById(R.id.googlelicenses).setVisibility(View.INVISIBLE);
+                    //findViewById(R.id.googlelicenses).setVisibility(View.INVISIBLE);
                 }
             }
         } catch (Exception e) {
@@ -73,7 +73,7 @@ public class LicenseAgreementActivity extends AppCompatActivity {
     }
 
     public void viewWarning(View myview) {
-        startActivity(new Intent(getApplicationContext(), Agreement.class));
+        //startActivity(new Intent(getApplicationContext(), Agreement.class));
     }
 
     public void addListenerOnButton() {
